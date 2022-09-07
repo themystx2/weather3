@@ -1,6 +1,8 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
-  font-family: 'Gotham Rounded', sans-serif;
+  font-family: "Gotham Rounded", sans-serif;
 }
 
 body {
@@ -32,19 +34,25 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  border-top-left-radius: 5px; 
-  border-top-right-radius: 5px; 
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
-
 
 .icon-container {
   position: relative;
   top: 70px;
   padding: 20px;
   background-color: white;
+  background-image: -moz-element();
   width: 140px;
   height: 140px;
   border-radius: 50%;
+}
+
+/* Image */
+.header img {
+  width: 100px;
+  height: 100px;
 }
 
 .general-information {

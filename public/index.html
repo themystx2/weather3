@@ -6,12 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link href="styles.css" rel="stylesheet" />
     <script
-      async
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDc1cO1tFMGlC7Bm7CHodsB5BeT0ItDgIY&libraries=places&callback=initMap"
-    ></script>
-    <script
       defer
-      src="https://cdnjs.cloudflare.com/ajax/libs/skycons/1396634940/skycons.min.js"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDc1cO1tFMGlC7Bm7CHodsB5BeT0ItDgIY&libraries=places&callback=initMap"
     ></script>
     <script defer src="script.js"></script>
     <title>Weather App</title>
@@ -20,7 +16,7 @@
     <div class="container">
       <div class="header">
         <div class="icon-container">
-          <canvas id="icon" width="100" height="100"></canvas>
+          <img src="./icons/icon.png" alt="{}" />
         </div>
       </div>
       <div class="content">
@@ -38,8 +34,8 @@
             <div class="value" data-temperature>TBD</div>
           </div>
           <div class="detail">
-            <div class="title">Precipitation</div>
-            <div class="value" data-precipitation>TBD</div>
+            <div class="title">Humidity</div>
+            <div class="value" data-humidity>TBD</div>
           </div>
         </div>
         <div class="city-search-container">
@@ -52,7 +48,10 @@
         </div>
       </div>
     </div>
-    <a href="https://www.openweathermap.org" class="darksky-logo"
+    <a
+      href="https://www.openweathermap.org"
+      target="_blank"
+      class="darksky-logo"
       >Powered By OpenWeather</a
     >
   </body>

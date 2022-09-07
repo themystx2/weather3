@@ -3,6 +3,7 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 const OPENWEATHER_API_KEY = process.env.OPENWEATHER_API_KEY;
+const debug = require("axios-debug-log");
 const axios = require("axios");
 const express = require("express");
 const app = express();
@@ -16,7 +17,7 @@ app.post("/weather", (req, res) => {
   axios({
     url: url,
     responseType: "json",
-  }).then((data) => res.json(data.data.temperature));
+  }).then((data) => res.json(data.data));
 });
 
 app.listen(3000, () => {
