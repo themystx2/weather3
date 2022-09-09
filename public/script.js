@@ -23,28 +23,22 @@ searchBox.addListener("places_changed", () => {
     });
 });
 
-const icon = document.querySelector("icon-container");
+const icon = document.querySelector(".icon-container");
 const locationElement = document.querySelector("[data-location]");
 const statusElement = document.querySelector("[data-status]");
 const temperatureElement = document.querySelector("[data-temperature]");
 const humidityElement = document.querySelector("[data-humidity]");
 const windElement = document.querySelector("[data-wind]");
-icon.set(
-  "icon",
-  `http://openweathermap.org/img/wn/${data.weather[0].iconId}.png`
-);
-icon.play();
+icon.set("icon", "clear-day");
 
 function setWeatherData(data, place) {
   console.log(data);
   locationElement.textContent = place;
   statusElement.textContent = data.weather[0].description;
-  temperatureElement.textContent = (data.main.temp - 273.15) * (9 / 5) + 32;
+  temperatureElement.textContent =
+    parseFloat((data.main.temp - 273.15) * (9 / 5) + 32).toFixed(1) + ` °F`;
   humidityElement.textContent = `${data.main.humidity}%`;
-  windElement.textContent = data.wind.speed;
-  icon.set(
-    "icon",
-    `http://openweathermap.org/img/wn/${data.weather[0].iconId}.png`
-  );
-  icon.play();
+  windElement.textContent =
+    parseFloat(data.wind.speed * 2.237).toFixed(1) + ` MPH`;
+  icon.innerHTML = `<img src=http://openweathermap.org/img/wn/${data.weather[0].icon}.png>`;
 }
