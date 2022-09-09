@@ -1,4 +1,4 @@
-# JS-Weather2
+# JS-Weather3
  Weather App, converted from DarkSky to OpenWeather API.
 
 enter OW API key in .env
